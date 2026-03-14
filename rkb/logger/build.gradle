@@ -13,12 +13,15 @@ android {
     }
     
     compileOptions {
-		sourceCompatibility JavaVersion.VERSION_17
-		targetCompatibility JavaVersion.VERSION_17
-	}
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
 }
 
 dependencies {
     implementation project(':rkb:resources')
     implementation project(':rkb:codeUtil')
+    
+    // 👇 我帮你加上这句，修复本次所有报错
+    implementation libs.androidx.preference
 }
