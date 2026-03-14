@@ -37,5 +37,8 @@ public class LanguagesPreferences {
         list.add(new Pair<String, String>("Português", "pt"));
         list.add(new Pair<String, String>("हिन्दी", "hi"));
         list.add(new Pair<String, String>("বাংলা", "bn"));
+        // 👇 新增中文（简体 + 繁体）
+        list.add(new Pair<String, String>("中文 (简体)", "zh-CN"));
+        list.add(new Pair<String, String>("中文 (繁體)", "zh-TW"));
     }
 }
