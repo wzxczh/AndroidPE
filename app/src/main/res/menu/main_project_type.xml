@@ -19,6 +19,5 @@
 		android:title="@string/tools"
 		app:showAsAction="always"
 		android:id="@+id/tools"
-		android:icon="@drawable/ic_tools"/>
-
+		android:icon="@drawable/ic_grid_outline"/> 
 </menu>
