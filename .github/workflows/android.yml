@@ -1,42 +1,42 @@
-name: Android CI (Auto Build APK)
+名称:Android CI(自动构建APK)
 
-# 触发条件：推送到 main 分支或发起 PR 时自动构建
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+# 触发条件：推送到主要的分支或发起一对时自动构建
+开启:
+推送:
+分支:[ "主要" ]
+拉取请求:
+分支:[ "主要" ]
 
-jobs:
-  build:
-    # 使用 Ubuntu 最新版作为构建环境
-    runs-on: ubuntu-latest
+工作:
+构建:
+# 使用人的本质最新版作为构建环境
+运行:Ubuntu-最新版
 
-    steps:
+步骤:
       # 1. 拉取仓库代码
-      - name: Checkout code
-        uses: actions/checkout@v4
+-名称:结帐代码
+用途:动作/结帐@v4
 
-      # 2. 配置 JDK 17（适配你的 compileSdk 34）
-      - name: Set up JDK 17
-        uses: actions/setup-java@v4
-        with:
-          java-version: '17'
-          distribution: 'temurin'
+# 2.配置JDK 17(适配你的编译dk 34)
+-名称：建立JDK 17
+用法：操作/设置-java@v4
+使用:
+Java 语言(一种计算机语言，尤用于创建网站)语言（一种计算机语言,尤用于创建网站)版本："17"
+        d我s贡献: 特穆林
           cache: gradle  # 缓存 Gradle 依赖，加速后续构建
 
-      # 3. 给 gradlew 脚本添加执行权限
-      - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+# 3. 给 g拉德卢脚本添加执行权限# 3. 给 g拉德卢脚本添加执行权限
+      - 名字: 名字
+钌cchmod +x梯度
 
-      # 4. 构建 Release 版 APK
-      - name: Build Release APK
-        run: ./gradlew assembleRelease
+钌cchmod +x梯度# 4. 构建 稀有e出租版APK
+      - 名字: 构建发布APK
+奔跑奔跑。/grad Lew assembler请
 
       # 5. 上传构建好的 APK 作为产物
-      - name: Upload Release APK
-        uses: actions/upload-artifact@v4
-        with:
-          name: AndroidPE-Release-APK
+小路: Upload Release APK
+用途:操作/上传-工件@v4: actions/upload-artifact@v4
+使用::
+名称:安卓普-释放-APK: AndroidPE-Release-APK
           # 路径与你的项目输出完全对应
-          path: app/build/outputs/apk/release/*.apk
+路径:应用程序/构建/输出/apk/发布/* .apk: 应用程序/构建/输出/apk/发布/*。apk
